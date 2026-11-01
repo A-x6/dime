@@ -65,10 +65,9 @@ struct LockBudgetWidgetProvider: IntentTimelineProvider {
 //        let dataController = DataController()
         let dataController = DataController.shared
 
-        if let objectIDURL = URL(string: budgetId) {
-            let managedObjectID = dataController.container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: objectIDURL)!
-
-            let budget = dataController.container.viewContext.object(with: managedObjectID) as! Budget
+        if let objectIDURL = URL(string: budgetId),
+           let managedObjectID = dataController.container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: objectIDURL),
+           let budget = (try? dataController.container.viewContext.existingObject(with: managedObjectID)) as? Budget {
 
             let fetchRequest = dataController.fetchRequestForBudgetTransactions(budget: budget)
 
