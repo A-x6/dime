@@ -101,6 +101,7 @@
 "filter-tag-month" = "месяц";
 "filter-tag-recurring" = "повторяющиеся";
 "filter-picker-income" = "Доход";
+"filter-tag-upcoming" = "предстоящие";
 "Total Spent" = "Всего потрачено";
 "Total Income" = "Общая прибыль";
 "Net Total" = "Сальдо";
